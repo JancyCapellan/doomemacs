@@ -78,35 +78,35 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(use-package lsp-mode
-  :defer t
-  :config
-  ;; minor changes: saves excursion and uses search-forward instead of re-search-forward
-  (advice-add 'json-parse-buffer :around
-              (lambda (oldfn &rest args)
-	        (save-excursion
-                  (while (search-forward "\\u0000" nil t)
-                    (replace-match "" nil t)))
-		(apply oldfn args))))
+;; (use-package lsp-mode
+  ;; :defer t
+  ;; :config
+  ;; ;; minor changes: saves excursion and uses search-forward instead of re-search-forward
+  ;; (advice-add 'json-parse-buffer :around
+  ;;             (lambda (oldfn &rest args)
+	 ;;        (save-excursion
+  ;;                 (while (search-forward "\\u0000" nil t)
+  ;;                   (replace-match "" nil t)))
+		;; (apply oldfn args))))
 
 ;; config.el
-(use-package turbo-log
-  :bind (("C-x C-l" . turbo-log-print)
-         ("C-x C-i" . turbo-log-print-immediately)
-         ("C-x C-h" . turbo-log-comment-all-logs)
-         ("C-x C-s" . turbo-log-uncomment-all-logs)
-         ("C-x C-[" . turbo-log-paste-as-logger)
-         ("C-x C-]" . turbo-log-paste-as-logger-immediately)
-         ("C-x C-x" . turbo-log-delete-all-logs))
-  :config
-  (setq turbo-log-msg-format-template "\"🚀: %s\"")
-  (setq turbo-log-allow-insert-without-tree-sitter-p t))
+;; (use-package turbo-log
+;;   :bind (("C-x C-l" . turbo-log-print)
+;;          ("C-x C-i" . turbo-log-print-immediately)
+;;          ("C-x C-h" . turbo-log-comment-all-logs)
+;;          ("C-x C-s" . turbo-log-uncomment-all-logs)
+;;          ("C-x C-[" . turbo-log-paste-as-logger)
+;;          ("C-x C-]" . turbo-log-paste-as-logger-immediately)
+;;          ("C-x C-x" . turbo-log-delete-all-logs))
+;;   :config
+;;   (setq turbo-log-msg-format-template "\"🚀: %s\"")
+;;   (setq turbo-log-allow-insert-without-tree-sitter-p t))
 
-(use-package tree-sitter-langs
-  :ensure t
-  :defer t)
+;;(use-package tree-sitter-langs
+;;  :ensure t
+;;  :defer t)
 
-(use-package tree-sitter
-  :ensure t
-  :after tree-sitter-langs)
-(use-package! lsp-tailwindcss)
+;;(use-package tree-sitter
+;;  :ensure t
+;;  :after tree-sitter-langs)
+;; (use-package! lsp-tailwindcss)

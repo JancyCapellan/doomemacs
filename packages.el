@@ -50,5 +50,6 @@
                                         ;(unpin! t)
 
 ;; packages.el
-(package! turbo-log :recipe (:host github :repo "artawower/turbo-log"))
-(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
+;; (package! turbo-log :recipe (:host github :repo "artawower/turbo-log"))
+
+;; (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
